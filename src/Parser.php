@@ -10,7 +10,7 @@
                 return ['Invalid URL'];
             }
             
-            preg_match_all('/<' . $tag . '.*?>(.*?)<\/', $htmlPage, $strings);
+            preg_match_all('/<' . $tag . '.*?>(.*?)<\/' . $tag . '>/s', $htmlPage, $strings);
             
             if (empty($strings[1])) {
                 return ['The are no such tags on the page'];
